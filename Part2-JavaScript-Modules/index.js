@@ -1,18 +1,20 @@
 import dataKey from "./config.js";
 const key = dataKey.apiKey;
-import { createDiv, createP } from "./modules/createHtmlElem.js";
+import {
+  createDiv,
+  creatH1,
+  createInput,
+  createP,
+  createImg,
+} from "./modules/createHtmlElem.js";
 
-// Create search container
+// // Create search container
 const createSearchDiv = createDiv("search");
 document.body.appendChild(createSearchDiv);
-const createHeader = document.createElement("h1");
-createHeader.setAttribute("class", "header");
+const createHeader = creatH1("header", "The daily weather");
 createSearchDiv.appendChild(createHeader);
-createHeader.innerHTML = "The daily weather";
-const CreateInput = document.createElement("input");
-CreateInput.setAttribute("class", "myInput");
-CreateInput.type = "text";
-CreateInput.placeholder = "Enter city name";
+
+const CreateInput = createInput("myInput", "text", "Enter city name");
 createSearchDiv.append(CreateInput);
 
 // Create container for html elements
@@ -26,23 +28,19 @@ const createElements = (daily, city, day) => {
   // Create card
   const createWeatherDiv = createDiv("weatherDiv");
   createWeatherCont.appendChild(createWeatherDiv);
-
   const createDayTemDiv = createDiv("createDayTemDiv");
 
-  const createDay = document.createElement("h4");
-  createDay.setAttribute("class", "day");
-  createDay.innerText = day;
+  const createDayContent = day;
+  const createDay = createP("description", createDayContent);
 
-  const createTemp = document.createElement("h1");
-  createTemp.setAttribute("class", "temperature");
-  createTemp.innerText = `${Math.round(daily.temp.day)}°C`;
+  const createTempContent = `${Math.round(daily.temp.day)}°C`;
+  const createTemp = creatH1("temperature", createTempContent);
 
   createDayTemDiv.append(createDay, createTemp);
 
-  const createImg = document.createElement("img");
-  createImg.setAttribute("class", "image");
-  createImg.src =
+  const imgSrc =
     "http://openweathermap.org/img/wn/" + daily.weather[0].icon + ".png";
+  const createImage = createImg("image", imgSrc);
 
   const createMinMaxDiv = createDiv("minMax");
   const minParaContent = `Low ${Math.round(daily.temp.min)}°C`;
@@ -63,7 +61,7 @@ const createElements = (daily, city, day) => {
   createWeatherDiv.append(
     createDayTemDiv,
     createDesc,
-    createImg,
+    createImage,
     createMinMaxDiv,
     createHumid,
     createWind
@@ -170,5 +168,4 @@ CreateInput.addEventListener("keyup", (e) => {
     getData();
     getCityImage();
   }
-  return;
 });
