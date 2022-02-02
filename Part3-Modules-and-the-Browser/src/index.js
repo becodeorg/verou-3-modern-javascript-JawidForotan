@@ -1,4 +1,5 @@
-import dataKey from "./config.js";
+import dataKey from "../config.js";
+import "./style.css";
 const key = dataKey.apiKey;
 import {
   createDiv,
@@ -6,7 +7,8 @@ import {
   createInput,
   createP,
   createImg,
-} from "./modules/createHtmlElem.js";
+} from "../modules/createHtmlElem.js";
+console.log("Hello, Webpack!");
 
 // // Create search container
 const createSearchDiv = createDiv("search");

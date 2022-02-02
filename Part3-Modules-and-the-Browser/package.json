@@ -1,0 +1,21 @@
+{
+  "name": "Part3-Modules-and-the-Browser",
+  "version": "1.0.0",
+  "description": "Part 2 - JavaScript Modules\r Did you know? With modern Javascript, we can also separate our functions in multiple files! Resulting in an even better organised and readable way! This is done by making use of the import/export directives.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^6.5.1",
+    "html-webpack-plugin": "^4.0.0-beta.7",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.68.0",
+    "webpack-cli": "^4.9.2"
+  }
+}
