@@ -1,0 +1,24 @@
+{
+  "name": "part4-package-manager",
+  "version": "1.0.0",
+  "description": "🌱 Must-have's\r We have installed npm before: typing npm -v in the terminal should return the npm version.\r In your project's folder you should see a file called package.json: this is called a Manifest file, something like a \"setting\" file.\r Inside the package.json file you will see a lot of different properties. One of those properties is script.\r Scripts can be used to create shortcuts in the command prompt/shell.\r Remember before? We already used this to run a bundler.\r \"scripts\": {\r ...\r \"build\": \"webpack\"\r },\r Add a property build to your script (see above) and try to build and run your project in your terminal with the script shortcuts\r npm run build\r or\r yarn build",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.17.0",
+    "@babel/preset-env": "^7.16.11",
+    "babel-loader": "^8.2.3",
+    "css-loader": "^6.6.0",
+    "html-webpack-plugin": "^5.5.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.68.0",
+    "webpack-cli": "^4.9.2"
+  }
+}
